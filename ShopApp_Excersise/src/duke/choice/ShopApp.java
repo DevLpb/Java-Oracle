@@ -21,10 +21,10 @@ public class ShopApp {
 
         Customer c1 = new Customer();
 
-        c1.name = "Pinky";
-        c1.size = "S";
+        c1.setName("Pinky");
+        c1.setSize("S");
 
-        System.out.println("Customer is " + c1.name);
+        System.out.println("Customer is " + c1.getName());
 
         Clothing item1 = new Clothing();
 
@@ -32,21 +32,21 @@ public class ShopApp {
 
         Clothing[] items = {item1, item2, new Clothing(), new Clothing()};
 
-        item1.description = "Blue Jacket";
-        item1.price = 20.9;
-        item1.size = "M";
+        item1.setDescription("Blue Jacket");
+        item1.setPrice(20.9);
+        item1.setSize("M");
 
-        item2.description = "Orange T-Shirt";
-        item2.price = 10.5;
-        item2.size = "S";
+        item2.setDescription("Orange T-Shirt");
+        item2.setPrice(10.5);
+        item2.setSize("S");
         
-        items[2].description = "Green Scarf";
-        items[2].price = 5;
-        items[2].size = "S";
+        items[2].setDescription("Green Scarf");
+        items[2].setPrice(5);
+        items[2].setSize("S");
         
-        items[3].description = "Blue T-Shirt";
-        items[3].price = 10.5;
-        items[3].size = "S";
+        items[3].setDescription("Blue T-Shirt");
+        items[3].setPrice(10.5);
+        items[3].setSize("S");
         
         
 
@@ -55,24 +55,15 @@ public class ShopApp {
 //        total = ((item2.price * 2) + item1.price) * (1 + tax);
         int measurement = 3;
 
-        switch (measurement) {
-            case 1, 2, 3:
-                c1.size = "S";
-                break;
-            case 4, 5, 6:
-                c1.size = "M";
-                break;
-            case 7, 8, 9:
-                c1.size = "L";
-                break;
-            default:
-                c1.size = "X";
-        }
+        c1.setSize(measurement);
+        
+        System.out.println("Customer's size: "+ c1.getSize());
 
         for (Clothing item : items) {
-            if (c1.size.equals(item.size)) {
-                total = total + item.price;
-                System.out.println(item.description + ", " + item.price + ", " + item.size);
+            if (c1.getSize().equals(item.getSize())) {
+                total = total + item.getPrice();
+                System.out.println(item.getDescription() + ", " + item.getPrice() + ", " + item.getSize());
+//                total = total + total * tax;
                 if (total > 15) {
                     break;
                 }
