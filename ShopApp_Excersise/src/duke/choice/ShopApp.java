@@ -19,6 +19,7 @@ public class ShopApp {
 
         System.out.println("Welcome to Duke Choice Shop!");
 
+        System.out.println("Min. Price: " + Clothing.MIN_PRICE);
         Customer c1 = new Customer("Pinky", 3);
 
 //        c1.setName("Pinky");
