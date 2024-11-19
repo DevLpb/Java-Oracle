@@ -24,7 +24,6 @@ public class ShopApp {
 
 //        c1.setName("Pinky");
 //        c1.setSize("S");
-
         System.out.println("Customer is " + c1.getName());
 
         Clothing item1 = new Clothing("Blue Jacket", 20.9, "M");
@@ -36,11 +35,9 @@ public class ShopApp {
 //        item1.setDescription();
 //        item1.setPrice();
 //        item1.setSize();
-
 //        item2.setDescription();
 //        item2.setPrice();
 //        item2.setSize();
-
 //        items[2].setDescription();
 //        items[2].setPrice();
 //        items[2].setSize();
@@ -48,7 +45,6 @@ public class ShopApp {
 //        items[3].setDescription();
 //        items[3].setPrice();
 //        items[3].setSize();
-
 //        System.out.println(item1.description + ", " + item1.price + ", " + item1.size);
 //        System.out.println(item2.description + ", " + item2.price + ", " + item2.size);
 //        total = ((item2.price * 2) + item1.price) * (1 + tax);
@@ -57,15 +53,32 @@ public class ShopApp {
         c1.addItems(items);
 
 //        c1.setSize(measurement);
-
         System.out.println("Customer's size: " + c1.getSize() + "," + c1.getTotalClothingCost());
 
         for (Clothing item : c1.getItems()) {
 
-            System.out.println("Items: " + item.getDescription());
+            System.out.println("Items: " + item.getDescription() + ", " + item.getSize() + ", " + item.getPrice());
         }
 
         System.out.println("Total: " + total);
+
+        //Exception
+        int average = 0;
+        int count = 0;
+
+        for (Clothing item : c1.getItems()) {
+            if (item.getSize().equals("L")) {
+                count++;
+                average += item.getPrice();
+            }
+        }
+        try {
+            average = average / count;
+            //avoid Exception: average = (count == 0) ? 0 : average / count;
+            System.out.println("Average price: " + average + ", " + "Count: " + count);
+        } catch (ArithmeticException e) {
+            System.out.println("Don't divide by 0");
+        }
 
     }
 
