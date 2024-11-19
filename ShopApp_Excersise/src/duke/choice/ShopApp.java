@@ -19,34 +19,34 @@ public class ShopApp {
 
         System.out.println("Welcome to Duke Choice Shop!");
 
-        Customer c1 = new Customer();
+        Customer c1 = new Customer("Pinky", 3);
 
-        c1.setName("Pinky");
-        c1.setSize("S");
+//        c1.setName("Pinky");
+//        c1.setSize("S");
 
         System.out.println("Customer is " + c1.getName());
 
-        Clothing item1 = new Clothing();
+        Clothing item1 = new Clothing("Blue Jacket", 20.9, "M");
 
-        Clothing item2 = new Clothing();
+        Clothing item2 = new Clothing("Orange T-Shirt", 10.5, "S");
 
-        Clothing[] items = {item1, item2, new Clothing(), new Clothing()};
+        Clothing[] items = {item1, item2, new Clothing("Green Scarf", 5, "S"), new Clothing("Blue T-Shirt", 10.5, "S")};
 
-        item1.setDescription("Blue Jacket");
-        item1.setPrice(20.9);
-        item1.setSize("M");
+//        item1.setDescription();
+//        item1.setPrice();
+//        item1.setSize();
 
-        item2.setDescription("Orange T-Shirt");
-        item2.setPrice(10.5);
-        item2.setSize("S");
+//        item2.setDescription();
+//        item2.setPrice();
+//        item2.setSize();
 
-        items[2].setDescription("Green Scarf");
-        items[2].setPrice(5);
-        items[2].setSize("S");
-
-        items[3].setDescription("Blue T-Shirt");
-        items[3].setPrice(10.5);
-        items[3].setSize("S");
+//        items[2].setDescription();
+//        items[2].setPrice();
+//        items[2].setSize();
+//
+//        items[3].setDescription();
+//        items[3].setPrice();
+//        items[3].setSize();
 
 //        System.out.println(item1.description + ", " + item1.price + ", " + item1.size);
 //        System.out.println(item2.description + ", " + item2.price + ", " + item2.size);
@@ -55,7 +55,7 @@ public class ShopApp {
 
         c1.addItems(items);
 
-        c1.setSize(measurement);
+//        c1.setSize(measurement);
 
         System.out.println("Customer's size: " + c1.getSize() + "," + c1.getTotalClothingCost());
 

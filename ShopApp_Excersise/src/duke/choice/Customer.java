@@ -15,10 +15,17 @@ public class Customer {
 
     private Clothing[] items;
 
+    //Constructor 
+    
+    public Customer(String name, int measurement) {
+        this.name = name;
+        setSize(measurement);
+    }
+
     public void addItems(Clothing[] someItems) {
         items = someItems;
     }
-
+    
     public Clothing[] getItems() {
         return items;
     }
@@ -43,6 +50,9 @@ public class Customer {
         return total;
     }
 
+    
+    //Getters and Setters
+    
     public String getName() {
         return name;
     }

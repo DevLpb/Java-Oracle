@@ -16,6 +16,16 @@ public class Clothing {
     private final double MIN_PRICE = 10;
     private final double MIN_TAX = 0.2;
 
+    //Constructor
+    
+    public Clothing(String description, double price, String size) {
+        this.description = description;
+        this.price = price;
+        setSize(size);
+    }
+    
+    //Getters and Setters
+    
     public String getDescription() {
         return description;
     }
