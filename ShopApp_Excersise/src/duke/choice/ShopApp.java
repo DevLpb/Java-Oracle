@@ -4,6 +4,8 @@
  */
 package duke.choice;
 
+import java.util.Arrays;
+
 /**
  *
  * @author pc
@@ -57,7 +59,8 @@ public class ShopApp {
 
         for (Clothing item : c1.getItems()) {
 
-            System.out.println("Items: " + item.getDescription() + ", " + item.getSize() + ", " + item.getPrice());
+//            System.out.println("Items: " + item.getDescription() + ", " + item.getSize() + ", " + item.getPrice());
+              System.out.println("Item: " + item);
         }
 
         System.out.println("Total: " + total);
@@ -79,7 +82,12 @@ public class ShopApp {
         } catch (ArithmeticException e) {
             System.out.println("Don't divide by 0");
         }
+        
+        Arrays.sort(c1.getItems());
 
+        for (Clothing item : c1.getItems()) {
+              System.out.println("Item: " + item);
+        }
     }
 
 }
