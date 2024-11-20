@@ -51,5 +51,11 @@ public class Clothing {
         this.size = size;
     }
     
+    //Override toString Method
+    @Override
+    public String toString() {
+        return getDescription() + ", " + getSize() + ", " + getPrice();
+    }
+    
     
 }
