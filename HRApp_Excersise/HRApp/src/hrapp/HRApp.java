@@ -30,6 +30,10 @@ public class HRApp {
         dept.agregarEmpleado(listaEmpleados);
         
         dept.mostrarEmpleados();
+        
+        dept.cantidadEmpleados();
+        
+        dept.buscarEmpleado(2);
     }
     
 }
