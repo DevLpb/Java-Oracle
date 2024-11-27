@@ -33,7 +33,12 @@ public class HRApp {
         
         dept.cantidadEmpleados();
         
-        dept.buscarEmpleado(2);
+        dept.buscarEmpleadoPorID(2);
+        
+        double totalSalarios = dept.totalSalarios();
+        System.out.println("Suma total de salarios: " + totalSalarios);
+        
+        dept.salarioPromedio();
     }
     
 }

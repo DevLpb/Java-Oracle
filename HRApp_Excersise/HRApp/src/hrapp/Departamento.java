@@ -104,10 +104,27 @@ public class Departamento {
                 System.out.println(arrayEmpleados[i]);
                 empleadoEncontrado = true;
                 break;
-            } 
+            }
         }
         if (empleadoEncontrado == false) {
             System.out.println("Empleado no encontrado");
         }
-    } 
+    }
+
+    public double totalSalarios() {
+        double sumaSalarios = 0;
+        for (Empleado emp : arrayEmpleados) {
+            if (emp != null) {
+                sumaSalarios += emp.getSalario();
+            }
+        }
+        return sumaSalarios;
+    }
+
+    public double salarioPromedio() {
+        double total = totalSalarios();
+        double promedio = empleados > 0 ? total / empleados : 0;
+        System.out.println("Salario promedio: " + promedio);
+        return promedio;
+    }
 }
