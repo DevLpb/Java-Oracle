@@ -33,7 +33,14 @@ public class HRApp {
         
         dept.cantidadEmpleados();
         
-        dept.buscarEmpleadoPorID(2);
+        dept.buscarEmpleadoSimple(3);
+        
+        Empleado empleadoEncontrado = dept.buscarEmpleado(0);
+        if (empleadoEncontrado != null) {
+            System.out.println("Empleado encontrado: " + empleadoEncontrado);
+        } else {
+            System.out.println("Empleado no encontrado");
+        }
         
         double totalSalarios = dept.totalSalarios();
         System.out.println("Suma total de salarios: " + totalSalarios);

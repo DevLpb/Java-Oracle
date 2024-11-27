@@ -49,6 +49,8 @@ public class Departamento {
     }
 
     //Otros métodos
+    
+    //Agrega un empleado recibido de un array auxiliar, y aumenta el contador de empleados al hacerlo.
     public void agregarEmpleado(Empleado[] unEmpleado) {
         //Cuenta la cantidad de empleados encontrados en el array
         for (int x = 0; x < arrayEmpleados.length; x++) {
@@ -58,7 +60,7 @@ public class Departamento {
         }
 
         //Bucle for-each.
-        //Si por cada elemento del array auxiliar, recorre el array principal.
+        //Por cada elemento del array auxiliar, recorre el array principal.
         //Verifica que la cantidad de elementos sea menor a la máxima.
         //Si encuentra un lugar lleno, imprime "Ocupado", si no, agrega el elemento al índice actual y suma un empleado.
         for (Empleado emp : unEmpleado) {
@@ -83,6 +85,7 @@ public class Departamento {
         }
     }
 
+    //Imprime cada uno de los empleados del arrayEmpleados.
     public void mostrarEmpleados() {
         System.out.println("---Empleados actuales---");
         for (int i = 0; i < arrayEmpleados.length; i++) {
@@ -92,11 +95,14 @@ public class Departamento {
         }
     }
 
+    //Imprime la cantidad de empleados actual.
     public void cantidadEmpleados() {
         System.out.println("La cantidad de empleados actual es: " + empleados);
     }
 
-    public void buscarEmpleado(int ID) {
+    
+    //Búsqueda de empleado que devuelve un string, pero no un objeto.
+    public void buscarEmpleadoSimple(int ID) {
         System.out.println("---Buscando empleado por ID--- ");
         boolean empleadoEncontrado = false;
         for (int i = 0; i < arrayEmpleados.length; i++) {
@@ -110,7 +116,18 @@ public class Departamento {
             System.out.println("Empleado no encontrado");
         }
     }
+    
+    //Busca y devuelve un empleado por ID si existe.
+    public Empleado buscarEmpleado(int ID) {
+        for (Empleado emp : arrayEmpleados) {
+            if (emp != null && emp.getID() == ID) {
+                return emp;
+            }
+        }
+        return null;
+    }
 
+    //Suma todos los salarios de los empleados y retorna el valor.
     public double totalSalarios() {
         double sumaSalarios = 0;
         for (Empleado emp : arrayEmpleados) {
@@ -121,6 +138,9 @@ public class Departamento {
         return sumaSalarios;
     }
 
+    //Usa el método totalSalarios() para almacenar la suma total en una variable,
+    //luego obtiene el promedio dividiento la suma entre los empleados.
+    //Imprime el valor y lo retorna.
     public double salarioPromedio() {
         double total = totalSalarios();
         double promedio = empleados > 0 ? total / empleados : 0;
